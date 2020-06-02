@@ -27,8 +27,13 @@
         }
 
         if (button === null) {
-            button = document.createElement('button');
-            button.innerText = 'JUMP';
+            let chatButton = document.querySelector('.stream-chat .tw-mg-l-05 > button')
+            if (chatButton === null) {
+                return
+            }
+
+            button = chatButton.cloneNode(true);
+            button.childNodes[0].childNodes[0].textContent = 'JUMP';
             button.addEventListener('click', () => {
                 highlighted.scrollIntoView();
             });
