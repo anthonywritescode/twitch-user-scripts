@@ -17,7 +17,7 @@
         let target = e.target;
         while (target !== document.body && !target.classList.contains('chat-line__message')) {
             if (target.classList.contains('chat-line__username')) {
-                target = document.body
+                target = document.body;
             } else {
                 target = target.parentNode;
             }
