@@ -16,7 +16,11 @@
     document.body.addEventListener('click', (e) => {
         let target = e.target;
         while (target !== document.body && !target.classList.contains('chat-line__message')) {
-            target = target.parentNode;
+            if (target.classList.contains('chat-line__username')) {
+                target = document.body
+            } else {
+                target = target.parentNode;
+            }
         }
         if (target !== document.body) {
             if (highlighted !== null) {
@@ -24,6 +28,7 @@
             }
             highlighted = target;
             highlighted.style.border = '3px solid #FF69B4';
+            e.stopPropagation();
         }
 
         if (button === null) {
