@@ -28,7 +28,6 @@
             }
             highlighted = target;
             highlighted.style.border = '3px solid #FF69B4';
-            e.stopPropagation();
         }
 
         if (button === null) {
